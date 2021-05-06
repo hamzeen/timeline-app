@@ -1,0 +1,103 @@
+
+<div id="todo-containter" class="row">
+
+  <div class="col-12 col-lg-9">
+    <div style="margin-top: 110px">
+
+      <h1>Todo List</h1>
+
+      <div class="app" id="app">
+        <form [formGroup]="formTodo" class="form" (submit)="addTodo()">
+          <input formControlName="nextTodo" class="input form__input" placeholder="what's next .."/>
+          <button class="btn form__submit-btn" type="submit">Add</button>
+        </form>
+
+        <div class="filters">
+          <button
+            class="btn filters__btn filters__btn--all"
+            (click)="filterTodos('all')">All</button>
+          <button
+            class="btn filters__btn filters__btn--complete"
+            (click)="filterTodos('complete')">Complete</button>
+          <button
+            class="btn filters__btn filters__btn--incomplete"
+            (click)="filterTodos('incomplete')">Incomplete</button>
+        </div>
+
+        <div name="list" class="todo-list">
+          <li
+            class="todo-list__item"
+            [class.complete]="todo.complete"
+            *ngFor="let todo of filteredTodos; let idx = index">
+
+
+            <span (click)="toggleTodo(todo)"
+                    class="btn todo-list__item-done">
+              <i class="fa" [class.fa-check]="todo.complete"></i>
+            </span>
+
+            <button
+              class="todo-list__item-content"
+              (click)="toggleTodo(todo)"
+              [class.todo-complete]="todo.complete">{{ todo.text }}</button>
+
+            <span (click)="deleteTodo(idx)"
+                  class="btn todo-list__item-remove">
+              <i class="fa fa-trash"></i></span>
+
+          </li>
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+
+  <div class="col-12 col-lg-3">
+    <div class="sidebar">
+      <div class="about-me">
+        <h2>About me</h2>
+        <p>
+          Here goes my biography. Till it is baked you can check my timeline.
+          Have a nice day!</p>
+      </div>
+      <div class="recent-posts">
+        <div class="recent-post-wrap">
+          <figure>
+            <img src="assets/images/thumb-1.jpg" alt="">
+          </figure>
+          <header class="entry-header">
+            <div class="posted-date">
+              January 30, 2018
+            </div>
+            <h3><a href="#">My fall in love story</a></h3>
+            <div class="tags-links">
+              <a href="#">#winter</a>
+              <a href="#">#love</a>
+              <a href="#">#snow</a>
+              <a href="#">#january</a>
+            </div>
+          </header>
+        </div>
+        <div class="recent-post-wrap">
+          <figure>
+            <img src="assets/images/thumb-2.jpg" alt="">
+          </figure>
+          <header class="entry-header">
+            <div class="posted-date">
+              January 30, 2018
+            </div>
+            <h3><a href="#">My fall in love story</a></h3>
+            <div class="tags-links">
+              <a href="#">#winter</a>
+              <a href="#">#love</a>
+              <a href="#">#snow</a>
+              <a href="#">#january</a>
+            </div>
+          </header>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
