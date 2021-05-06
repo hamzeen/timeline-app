@@ -24,7 +24,7 @@ db.users.find().pretty()
     ```npm install```
 * start backend server:
     ```npm run dev```
-
+* JWT: head, body signature
 
 ## Running Front-End
 * ```npm install```
