@@ -17,6 +17,7 @@ show collections
 db.users.find().pretty()
 
 ```
+* https://medium.com/mongoaudit/how-to-enable-authentication-on-mongodb-b9e8a924efac
 
 ## Running backend
 * install dependencies:
