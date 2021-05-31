@@ -6,7 +6,10 @@
 
 
 ## start MongoDB service
-
+```
+.env
+https://github.com/hamzeen/JWT-backend/blob/master/.env
+```
 ```
 work around: <https://stackoverflow.com/questions/58034955/read-only-file-system-when-attempting-mkdir-data-db-on-mac>
 mongod --dbpath=/Users/user/data/db
