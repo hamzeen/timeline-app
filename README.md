@@ -6,6 +6,11 @@
 
 
 ## start MongoDB service
+
+```
+work around: <https://stackoverflow.com/questions/58034955/read-only-file-system-when-attempting-mkdir-data-db-on-mac>
+mongod --dbpath=/Users/user/data/db
+```
 ```
 cd mongodb/bin/mongo
 sudo mkdir -p /Users/hanz/data/db
